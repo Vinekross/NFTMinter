@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/plain; charset=UTF-8"/>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Hashgreed.com"
+    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>NFT Minting Hashgreed</title>
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            background-color: #170f34;
+        }
+        
+                .no-focus:focus{
+            box-shadow:none !important;
+            outline:none !important;
+        }        
+       
+.dbsc::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 120px;
+    left: 2px;
+    top: 0px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    background: linear-gradient(9.34deg, rgb(0, 210, 255) 19.28%, rgb(58, 123, 213) 106.03%);
+}        
+        
+        
+#rcorners {
+  border-radius: 16px;
+}
+
+#rcorners1 {
+  border-radius: 16px;
+  background: #0e171e;
+  padding: 5px; 
+  width: auto;
+  height: auto;  
+}        
+        
+        h1 {
+        text-align: center;
+        font-size: auto;
+        }
+        
+        h1-left {
+        text-align: center;
+        font-size: 15px;
+        }
+                      
+        h2 {
+        text-align: left;
+        font-size: 30px;
+        font-family: 'Courier', monospace;
+        }
+        
+        h3 {
+        text-align: center;
+        font-size: 12px;
+
+        }
+        
+        .sidebar {
+            height: 100%;
+            width: 85px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            white-space: nowrap;
+        }
+        
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #ffffff;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .sidebar a:hover {
+            color: #FE0E98;
+        }
+        
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        
+        .material-icons,
+        .icon-text {
+            vertical-align: middle;
+        }
+        
+        .material-icons {
+            padding-bottom: 3px;
+        }
+        
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+            margin-left: 100px;
+        }
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+            .sidebar a {
+                font-size: 18px;
+            }
+        }
+        .buttonTN {
+  background-color: #ff0080;
+  text-align: center;
+  width: auto;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  color: white;
+  cursor: pointer;
+}
+        
+        footer 
+        {
+        text-align: center;
+        background-color: #101215;
+        padding: 3px;
+        color:white;
+        }
+        
+        marquee
+        { 
+         font-size: 10px;
+        }        
+    </style>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+
+<script>
+function myFunction() {
+  var x = document.getElementById("rcorners");
+  if (x.style.display === "none") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+    
+</head>
+
+<body id='body'>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div id="main" >
+    
+        <div id="mainArea" class="d-none">
+
+        </div>
+<div class="row">
+        <div class="col mx-auto p-md-5 p-4 text-white" style="background-color: #1f2128; max-width: 450px; border-radius:10px;">
+            <h4 class="text-center mb-4">Hashgreed NFT Dapp</h4>
+            <div class="text-center" id="blockheight" style="font-size:10px;"></div>
+            
+            Series Name [16 char Max including Counter]:
+            <input type="text" id="seriesname" max="8" placeholder="Enter Series Name" class="form-control no-focus p-3" style="text-align-last:center;text-align:center; color:black; width:100%; border-radius:50px;"><br>
+            
+            Series Description [1000 char]:
+            <input type="text" id="seriesdescription" placeholder="Enter Series Description" class="form-control no-focus p-3" style="text-align-last:center;text-align:center; color:black; width:100%; border-radius:50px;"><br>
+
+            Start Counter:
+            <input id="startcounter" type="number" min="1" placeholder="Enter Start Counter" class="form-control no-focus p-3" style="text-align-last:center;text-align:center; color:black; width:100%; border-radius:50px;"><br>
+            
+            End Counter:
+            <input id="endcounter" type="number" min="1" placeholder="Enter End Counter" class="form-control no-focus p-3" style="text-align-last:center;text-align:center; color:black; width:100%; border-radius:50px;"><br>
+            <div id="app"></div>          
+            <hr style="background:white;height:3px;border-radius:50px;">            
+            Mint Series:
+            <input id="mintseries" type="text" placeholder="Enter Series Name" class="form-control no-focus p-3" style="text-align-last:center;text-align:center; color:black; width:100%; border-radius:50px;"><br>            
+            <div id="app1"></div>          
+
+            <div class="text-right" id="address" style="font-size:14px;"></div>
+            <div class="text-right" id="getcodebalance" style="font-size:14px;"></div>            
+            <script type="text/javascript" src="./build.js"></script><br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+            <button class="button buttonTN" onclick="location.href='https://chrome.google.com/webstore/detail/waves-keeper/lpilbniiabackdjcionkobglmddfbcjo'" type="button" style="color:white;">Download to Sign with Waves Keeper</a>         
+        </div>
+
+
+    </div>
+
+</div>
+        
+    </div>
+
+    
+    
+    </div>
+
+<br><hr>
+<footer>
+  <b>Powered by : <a href="https://hashgreed.com/">Hashgreed.com </b></a><br>Copyright 
+  <i class="material-icons">&#xe90c;</i><span class="icon-text"></span>2022  Vinekross LLC 
+  <marquee>Our application is using Waves Keeper to connect your account and sign all transactions. Our Web Application will never have any access to your private key or secret seed all your accounts should be managed at User End. Never enter your private key or secret seed in any 3rd party application.</marquee>
+</footer> 
+</body>
+
+</html>
